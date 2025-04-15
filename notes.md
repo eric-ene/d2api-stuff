@@ -1,0 +1,1 @@
+weapon perk type socket hash = `2846385770`
