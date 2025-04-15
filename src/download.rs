@@ -51,7 +51,7 @@ pub async fn download_json(category: &str, path: &str, check_date: bool) -> Resu
     Ok(key) => key,
     Err(_) => {
       println!();
-      return Err(APIError("BUNGIE_API_KEY not found in env :(".to_string()));
+      return Err(APIError("API_KEY not found in env :(".to_string()));
     }
   };
 
@@ -137,6 +137,8 @@ fn chunk_and_write(json: &Value, path: &str) -> Result<(), DownloadError> {
       fileno += 1;
     }
   }
+  
+  file.write("]\n".as_bytes())?;
   
   // fs::write(
   //   format!("data/{path}.json"),
