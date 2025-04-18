@@ -15,8 +15,9 @@ use crate::download::{download_json, DownloadError};
 
 #[tokio::main]
 async fn main() -> Result<(), DownloadError> {
-    download_json("DestinyPlugSetDefinition", "perks", false).await?;
-    download_json("DestinyInventoryItemDefinition", "items", false).await?;
+    // download_json("DestinyPlugSetDefinition", "perks", false).await?;
+    // download_json("DestinyInventoryItemDefinition", "items", false).await?;
+    download_json("DestinyDamageTypeDefinition", "damage-types", false).await?;
     
     return Ok(());
 }
